@@ -45,6 +45,28 @@ These are preserved vanilla consequences.
 GitHub — ZellnoPVEVehicleProtection
 [/url]
 
+[h2]Monetization Permission[/h2]
+
+Zellno permits the use of Zellno PVE Vehicle Protection on monetized DayZ
+servers, provided that the server operator is registered, approved and listed
+under Bohemia Interactive's DayZ Server Monetization program and complies
+with all applicable rules.
+
+This permission applies only to the original content provided by Zellno in
+Zellno PVE Vehicle Protection. It does not grant permission to monetize DayZ
+itself or any third-party modification or content used alongside this mod.
+
+Server operators are responsible for obtaining any additional permissions
+required by the authors of other mods installed on their servers.
+
+[url=https://www.bohemia.net/monetization]
+Official monetization rules
+[/url]
+
+[url=https://www.bohemia.net/monetization/approved/dayz]
+Approved DayZ servers
+[/url]
+
 [h2]License[/h2]
 
 MIT License.
