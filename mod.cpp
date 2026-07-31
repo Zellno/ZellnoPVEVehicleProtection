@@ -1,0 +1,10 @@
+name = "Zellno PVE Vehicle Protection";
+picture = "";
+logoSmall = "";
+logo = "";
+logoOver = "";
+tooltip = "Zellno PVE Vehicle Protection";
+overview = "Focused vehicle protection for full-PVE DayZ servers.";
+action = "https://github.com/Zellno/ZellnoPVEVehicleProtection";
+author = "Zellno";
+version = "0.1.0-alpha";
