@@ -14,4 +14,9 @@
 - Completed CarPack Cadillac Escalade functional tests.
 - Validated light and heavy fist attacks against a CarPack vehicle.
 - Preserved vanilla attacker bleeding when punching vehicle glass.
-- Documented pending two-player tests.
+- Completed multiplayer run-over testing in the active PVEZReloaded configuration.
+- Confirmed no apparent `TransportHit` damage against another survivor.
+- Confirmed PVEZReloaded protection against player-fired SNAFU M249 damage.
+- Confirmed clothing remained undamaged during blocked player firearm damage.
+- Clarified that direct firearm damage against occupants is outside this mod's scope.
+- Documented that isolated run-over testing without PVEZReloaded was not performed.

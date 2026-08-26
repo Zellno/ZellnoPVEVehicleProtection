@@ -29,9 +29,15 @@ battery and spark plug.
 
 Version 0.1.0-alpha.
 
-Single-player functional testing has passed with vanilla and CarPack
-vehicles. Tests requiring a second survivor remain pending, including direct
-vehicle run-over protection against another player.
+Functional testing has passed with vanilla and CarPack vehicles.
+
+Multiplayer vehicle run-over protection also passed on the Zellno DayZ Server:
+another survivor was struck by a player-driven vehicle and received no
+apparent TransportHit damage.
+
+The multiplayer test was performed with Zellno PVE Vehicle Protection and
+PVEZReloaded active. This confirms compatibility in the server's active PVE
+configuration, but does not isolate which mod rejected the final damage event.
 
 [h2]Notes[/h2]
 

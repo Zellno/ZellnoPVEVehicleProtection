@@ -71,14 +71,30 @@ A nearby RaG vehicle-lift notebook was destroyed by automatic fire while the
 vehicle remained undamaged. This confirmed that the protection does not make
 nearby world objects invulnerable.
 
-## Pending tests requiring two players
+## Multiplayer integration tests
 
 | Test | Status |
 |---|---|
-| Car run-over against another survivor | Pending |
-| Direct firearm hit against vehicle occupant | Pending |
-| PVEZReloaded player-versus-player behavior | Pending |
-| Combined PVEZReloaded and vehicle protection under two-player combat | Pending |
+| Car run-over against another survivor | Passed |
+| PVEZReloaded player protection against a SNAFU M249 | Passed |
+| Clothing preservation during blocked player firearm damage | Passed |
+| Combined PVEZReloaded and vehicle protection in the active server configuration | Passed |
+| Direct firearm hit against a vehicle occupant | Outside this mod's scope |
+| Isolated run-over test without PVEZReloaded | Not performed |
 
-The alpha must not be described as fully multiplayer-homologated until these
-tests are completed.
+Another survivor was struck by a player-driven vehicle and received no
+apparent `TransportHit` damage. The test was performed with Zellno PVE Vehicle
+Protection and PVEZReloaded active, confirming compatibility in the server's
+production mod configuration.
+
+Because PVEZReloaded remained active, this test does not isolate which mod
+rejected the final damage event. Zellno PVE Vehicle Protection independently
+contains a narrowly scoped filter for car-originated `TransportHit` damage.
+
+PVEZReloaded was also tested separately through direct player-versus-player
+automatic fire with a SNAFU M249. The target received no apparent player
+damage, and the target's clothing remained undamaged.
+
+Direct firearm damage against a vehicle occupant is not a requirement of
+Zellno PVE Vehicle Protection. Player-versus-player damage remains the
+responsibility of DayZ and the active PVE system.

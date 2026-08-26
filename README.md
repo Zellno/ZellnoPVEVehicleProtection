@@ -6,9 +6,9 @@ Small and focused vehicle protection for full-PVE DayZ servers.
 
 Version `0.1.0-alpha` for DayZ 1.29.
 
-The implementation has completed single-player functional testing with
-vanilla and CarPack vehicles. Tests that require a second survivor remain
-pending.
+The implementation has completed functional testing with vanilla and
+CarPack vehicles. Multiplayer vehicle run-over protection has also passed in
+the Zellno DayZ Server's active PVE configuration with PVEZReloaded.
 
 ## Features
 
@@ -89,7 +89,8 @@ Approved with a CarPack Cadillac Escalade:
 - Alligator high-caliber fire;
 - collision damage.
 
-See `TESTING.md` for the complete matrix and pending multiplayer tests.
+See `TESTING.md` for the complete test matrix and multiplayer integration
+results.
 
 ## Development environment
 
