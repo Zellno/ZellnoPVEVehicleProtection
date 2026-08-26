@@ -7,8 +7,9 @@ Small and focused vehicle protection for full-PVE DayZ servers.
 Version `0.1.0-alpha` for DayZ 1.29.
 
 The implementation has completed functional testing with vanilla and
-CarPack vehicles. Multiplayer vehicle run-over protection has also passed in
-the Zellno DayZ Server's active PVE configuration with PVEZReloaded.
+CarPack vehicles. Multiplayer vehicle run-over protection has also passed:
+another survivor was struck by a player-driven vehicle and received no
+`TransportHit` damage.
 
 ## Features
 

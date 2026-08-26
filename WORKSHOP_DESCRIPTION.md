@@ -31,13 +31,8 @@ Version 0.1.0-alpha.
 
 Functional testing has passed with vanilla and CarPack vehicles.
 
-Multiplayer vehicle run-over protection also passed on the Zellno DayZ Server:
-another survivor was struck by a player-driven vehicle and received no
-apparent TransportHit damage.
-
-The multiplayer test was performed with Zellno PVE Vehicle Protection and
-PVEZReloaded active. This confirms compatibility in the server's active PVE
-configuration, but does not isolate which mod rejected the final damage event.
+Multiplayer vehicle run-over protection has also passed: another survivor was
+struck by a player-driven vehicle and received no TransportHit damage.
 
 [h2]Notes[/h2]
 
