@@ -40,6 +40,12 @@ Glass impact sounds and visual effects may still play even when vehicle
 damage is rejected. Punching vehicle glass may still injure the attacker.
 These are preserved vanilla consequences.
 
+[h1]OFFICIAL MOD SUPPORT[/h1]
+
+For questions, bug reports, compatibility feedback and mod support, join the official Zellno Discord community:
+
+[url=https://discord.gg/bhfBetKtqr]Zellno Mod Support — Discord[/url]
+
 [h2]Source code[/h2]
 
 [url=https://github.com/Zellno/ZellnoPVEVehicleProtection]
