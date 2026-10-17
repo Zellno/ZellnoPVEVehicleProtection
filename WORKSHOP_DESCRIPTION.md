@@ -9,7 +9,7 @@ Small and focused vehicle protection for full-PVE DayZ servers.
 [*]Prevents players from damaging vehicles with melee attacks and fists.
 [*]Protects vehicle attachments such as doors, windows, wheels, radiator,
 battery and spark plug.
-[*]Prevents cars from causing vanilla TransportHit damage to players.
+[*]Prevents supported cars and motorcycles from causing vanilla TransportHit damage to players.
 [*]Preserves collision, mechanical, environmental and maintenance damage.
 [*]Preserves crash damage to vehicle occupants.
 [*]Preserves vehicle collision damage against infected and animals.
@@ -18,8 +18,9 @@ battery and spark plug.
 [h2]Compatibility[/h2]
 
 [list]
-[*]DayZ 1.29
-[*]Vanilla wheeled vehicles
+[*]DayZ 1.30
+[*]Vanilla wheeled vehicles based on CarScript
+[*]Jana 50 and Bitrak 682 motorcycles based on MotorbikeScript
 [*]CarPack vehicles based on CarScript
 [*]PVEZReloaded
 [*]No Community Framework dependency
@@ -27,12 +28,17 @@ battery and spark plug.
 
 [h2]Current status[/h2]
 
-Version 0.1.0-alpha.
+Version 0.2.0-alpha.
 
-Functional testing has passed with vanilla and CarPack vehicles.
+Functional testing has passed with vanilla cars, CarPack vehicles and the DayZ
+1.30 Jana 50 and Bitrak 682 motorcycles.
 
-Multiplayer vehicle run-over protection has also passed: another survivor was
-struck by a player-driven vehicle and received no TransportHit damage.
+Both motorcycle models passed local fist, sledgehammer and SNAFU M60 tests
+without detected vehicle damage. Vanilla crash consequences to the rider remain
+active.
+
+Multiplayer car run-over protection has passed. Motorcycle run-over protection
+is implemented, but a direct test against another survivor was not performed.
 
 [h2]Notes[/h2]
 

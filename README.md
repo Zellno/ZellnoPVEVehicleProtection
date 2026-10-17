@@ -4,20 +4,27 @@ Small and focused vehicle protection for full-PVE DayZ servers.
 
 ## Status
 
-Version `0.1.0-alpha` for DayZ 1.29.
+Version `0.2.0-alpha` for DayZ 1.30.
 
-The implementation has completed functional testing with vanilla and
-CarPack vehicles. Multiplayer vehicle run-over protection has also passed:
-another survivor was struck by a player-driven vehicle and received no
-`TransportHit` damage.
+The implementation has completed functional testing with vanilla cars,
+CarPack vehicles and the DayZ 1.30 Jana 50 and Bitrak 682 motorcycles.
+Multiplayer car run-over protection has also passed: another survivor was
+struck by a player-driven car and received no `TransportHit` damage.
+
+Motorcycle-originated `TransportHit` protection is implemented through the same
+shared vehicle-family filter. A direct motorcycle run-over test against another
+survivor was not performed because a second local client was unavailable.
 
 ## Features
 
-- Prevents players from damaging cars with firearms.
-- Prevents players from damaging cars with melee attacks.
-- Protects vehicle attachments such as doors, windows, wheels, radiator,
-  battery and spark plug from player firearms and melee attacks.
-- Prevents cars from causing vanilla `TransportHit` damage to players.
+- Prevents players from damaging supported cars and motorcycles with
+  firearms.
+- Prevents players from damaging supported cars and motorcycles with melee
+  attacks.
+- Protects supported vehicle attachments such as doors, windows, wheels,
+  radiator, battery and spark plug from player firearms and melee attacks.
+- Prevents supported cars and motorcycles from causing vanilla `TransportHit`
+  damage to players.
 - Preserves collision damage to vehicles.
 - Preserves crash damage to vehicle occupants.
 - Preserves mechanical, environmental and maintenance damage.
@@ -45,14 +52,16 @@ other PVE systems such as PVEZReloaded.
 The mod uses the official `EEOnDamageCalculated` callback, which runs
 immediately before damage is applied.
 
-Three narrowly scoped filters are used:
+Four narrowly scoped filters are used:
 
-1. `CarScript` rejects `CLOSE_COMBAT` and `FIRE_ARM` damage originating from
-   a player or an item parented to a player.
-2. `ItemBase` rejects the same player-originated damage only when the item's
-   direct hierarchy parent is a `CarScript`.
-3. `PlayerBase` rejects only `CUSTOM` damage whose ammo identifier is
-   `TransportHit` and whose source is a `CarScript`.
+1. A shared vehicle-family helper recognizes `CarScript` and
+   `MotorbikeScript`.
+2. `CarScript` and `MotorbikeScript` reject `CLOSE_COMBAT` and `FIRE_ARM`
+   damage originating from a player or an item parented to a player.
+3. `ItemBase` rejects the same player-originated damage only when the item's
+   direct hierarchy parent belongs to a supported vehicle family.
+4. `PlayerBase` rejects only `CUSTOM` damage whose ammo identifier is
+   `TransportHit` and whose source belongs to a supported vehicle family.
 
 Every other damage event is passed to the existing callback chain through
 `super.EEOnDamageCalculated(...)`.
@@ -61,8 +70,9 @@ Every other damage event is passed to the existing callback chain through
 
 Designed for:
 
-- DayZ 1.29;
-- vanilla wheeled vehicles;
+- DayZ 1.30;
+- vanilla wheeled vehicles based on `CarScript`;
+- Jana 50 and Bitrak 682 motorcycles based on `MotorbikeScript`;
 - CarPack vehicles based on `CarScript`;
 - PVEZReloaded;
 - Linux-hosted development and testing.
@@ -90,8 +100,16 @@ Approved with a CarPack Cadillac Escalade:
 - Alligator high-caliber fire;
 - collision damage.
 
-See `TESTING.md` for the complete test matrix and multiplayer integration
-results.
+Approved locally with the DayZ 1.30 Jana 50 and Bitrak 682:
+
+- fist attacks;
+- sledgehammer attacks;
+- SNAFU M60 automatic fire;
+- no vehicle damage detected after player attacks;
+- vanilla crash consequences to the rider preserved.
+
+Motorcycle run-over protection against another survivor was not directly
+tested. See `TESTING.md` for the complete test matrix and multiplayer results.
 
 ## Development environment
 

@@ -20,7 +20,7 @@ class CfgMods
         dir = "ZellnoPVEVehicleProtection";
         name = "Zellno PVE Vehicle Protection";
         author = "Zellno";
-        version = "0.1.0-alpha";
+        version = "0.2.0-alpha";
         type = "mod";
 
         dependencies[] =

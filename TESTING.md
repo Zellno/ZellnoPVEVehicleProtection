@@ -2,9 +2,8 @@
 
 ## Environment
 
-- DayZ Server: 1.29.163451
-- Steam build ID: 24041098
-- Mission: Chernarus
+- DayZ Server: 1.30.164078.38
+- Mission: `zellno.chernarusplus`
 - Platform: Linux
 - DayZ Tools: Windows tools executed through Wine
 - PVE system present: PVEZReloaded
@@ -65,6 +64,28 @@ vehicle damage is rejected.
 | Moderate collision damage | Preserved |
 | Damage transfer to radiator | Preserved |
 
+## DayZ 1.30 motorcycles
+
+The Jana 50 and Bitrak 682 inherit from `MotorbikeScript`. Both motorcycle
+models were tested locally; their seven color variants use the same supported
+base family.
+
+| Test | Jana 50 | Bitrak 682 |
+|---|---|---|
+| Server and client loading | Passed | Passed |
+| Fist attacks | Passed | Passed |
+| Sledgehammer attacks | Passed | Passed |
+| SNAFU M60 automatic fire | Passed | Passed |
+| Vehicle inspection after player attacks | No damage detected | No damage detected |
+| Normal engine and riding behavior | Passed | Passed |
+| Crash consequences to rider | Not repeated | Preserved; rider killed |
+| Visible motorcycle damage after tested crash | Not evaluated | No damage detected |
+
+The absence of visible motorcycle damage after the tested Bitrak 682 crash is
+recorded as observed DayZ 1.30 behavior. The mod does not reject motorcycle
+collision damage: only player-originated `CLOSE_COMBAT` and `FIRE_ARM` events
+are filtered.
+
 ## Scope validation
 
 A nearby RaG vehicle-lift notebook was destroyed by automatic fire while the
@@ -76,6 +97,11 @@ nearby world objects invulnerable.
 | Test | Status |
 |---|---|
 | Car run-over against another survivor | Passed |
+| Motorcycle run-over against another survivor | Not performed |
 
-Another survivor was struck by a player-driven vehicle and received no
+Another survivor was struck by a player-driven car and received no
 `TransportHit` damage.
+
+Motorcycle-originated `TransportHit` protection uses the same shared
+vehicle-family filter and recognizes `MotorbikeScript`. A direct motorcycle
+run-over test was not performed because a second local client was unavailable.
